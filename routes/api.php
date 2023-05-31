@@ -16,8 +16,9 @@ use App\Http\Controllers\ApiAuthController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function() {
+    Route::apiResource('/mahasiswas',MahasiswaController::class);
+    Route::get('/logout',[ApiAuthController::class,'logout']);
 });
 
 Route::get('/hello', function(){
@@ -29,5 +30,5 @@ Route::get('/hello', function(){
 //    return "hello word";
 //});
 
-Route::apiResource('/mahasiswas',MahasiswaController::class);
-Route::post('/login',[ApiAuthController::class,'login']);
+//Route::apiResource('/mahasiswas',MahasiswaController::class);
+//Route::post('/login',[ApiAuthController::class,'login']);
