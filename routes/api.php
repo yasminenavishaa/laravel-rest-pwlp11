@@ -32,3 +32,4 @@ Route::get('/hello', function(){
 
 //Route::apiResource('/mahasiswas',MahasiswaController::class);
 //Route::post('/login',[ApiAuthController::class,'login']);
+Route::post('/register',[ApiAuthController::class,'register']);
